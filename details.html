@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destination Details</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Travel The World</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="booking.html">Booking</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <a href="destinations.html" class="back-btn">&larr; Back to Destinations</a>
+
+    <div class="details-content">
+      <h1 id="title"></h1>
+      <img id="image" alt="Destination Image">
+      <p id="description"></p>
+      <h3>Top Attractions</h3>
+      <ul id="attractions"></ul>
+      <div class="info-grid">
+        <p><strong>Estimated Cost:</strong> <span id="cost"></span></p>
+        <p><strong>Best Time to Visit:</strong> <span id="bestTime"></span></p>
+        <p><strong>Travel Tips:</strong> <span id="tips"></span></p>
+      </div>
+      <br>
+      <a href="booking.html" class="btn">Book This Destination</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>Emmanuel Masha BCS-05-0117/2024 &copy;</p>
+  </div>
+</footer>
+
+<script>
+  const data = {
+    paris: {
+      title: "Paris, France",
+      image: "PARIS.webp",
+      description: "The City of Lights and Romance, known for art, fashion, and iconic landmarks.",
+      attractions: ["Eiffel Tower", "Louvre Museum", "Notre-Dame Cathedral", "Seine River Cruise"],
+      cost: "Ksh 120,000 – 180,000",
+      tips: "Visit early morning to avoid crowds at major attractions.",
+      bestTime: "April – June, September – October"
+    },
+    santorini: {
+      title: "Santorini, Greece",
+      image: "SANTORINI.webp",
+      description: "A beautiful island famous for white buildings and breathtaking sunset views.",
+      attractions: ["Oia Village", "Caldera View", "Red Beach", "Sunset Points"],
+      cost: "Ksh 150,000 – 200,000",
+      tips: "Best sunsets are in Oia village.",
+      bestTime: "May – September"
+    },
+    bali: {
+      title: "Bali, Indonesia",
+      image: "BALI.webp",
+      description: "A tropical paradise with beaches, temples, and rich culture.",
+      attractions: ["Ubud", "Kuta Beach", "Tanah Lot Temple", "Rice Terraces"],
+      cost: "Ksh 130,000 – 170,000",
+      tips: "Rent a scooter for easy movement around the island.",
+      bestTime: "April – October"
+    },
+    newyork: {
+      title: "New York, USA",
+      image: "NEWYORK.webp",
+      description: "The city that never sleeps, full of energy and skyscrapers.",
+      attractions: ["Times Square", "Central Park", "Statue of Liberty", "Brooklyn Bridge"],
+      cost: "Ksh 200,000 – 300,000",
+      tips: "Use the subway for cheaper and faster travel.",
+      bestTime: "April – June, September – November"
+    },
+    tokyo: {
+      title: "Tokyo, Japan",
+      image: "TOKYO.webp",
+      description: "A perfect mix of futuristic technology and deep tradition.",
+      attractions: ["Shibuya Crossing", "Tokyo Tower", "Akihabara", "Meiji Shrine"],
+      cost: "Ksh 180,000 – 260,000",
+      tips: "Get a Suica or Pasmo transport card.",
+      bestTime: "March – May, September – November"
+    },
+    maccupichu: {
+      title: "Machu Picchu, Peru",
+      image: "MACCUPICHU.webp",
+      description: "Ancient Incan city located high in the Andes Mountains.",
+      attractions: ["Sun Gate", "Temple of the Sun", "Inca Trail", "Terraces"],
+      cost: "Ksh 220,000 – 320,000",
+      tips: "Prepare for high altitude and book tickets in advance.",
+      bestTime: "May – September"
+    },
+    dubai: {
+      title: "Dubai, UAE",
+      image: "DUBAI.webp",
+      description: "A modern desert city with luxury and futuristic architecture.",
+      attractions: ["Burj Khalifa", "Desert Safari", "Dubai Mall", "Palm Jumeirah"],
+      cost: "Ksh 160,000 – 240,000",
+      tips: "Respect local culture and dress modestly in public places.",
+      bestTime: "November – March"
+    },
+    capetown: {
+      title: "Cape Town, South Africa",
+      image: "CAPETOWN.webp",
+      description: "A coastal city with mountains, beaches, and vibrant wildlife.",
+      attractions: ["Table Mountain", "Cape Point", "Robben Island", "Boulders Beach"],
+      cost: "Ksh 100,000 – 180,000",
+      tips: "Take the cable car to Table Mountain — it's a must!",
+      bestTime: "November – March"
+    },
+    rome: {
+      title: "Rome, Italy",
+      image: "ROME.webp",
+      description: "A historic city filled with ancient architecture and incredible food.",
+      attractions: ["Colosseum", "Vatican City", "Trevi Fountain", "Pantheon"],
+      cost: "Ksh 140,000 – 220,000",
+      tips: "Wear comfortable walking shoes — you will walk a lot!",
+      bestTime: "April – June, September – October"
+    }
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const place  = params.get("place") || params.get("destination");
+  const dest   = data[place];
+
+  if (dest) {
+    document.title = dest.title + " | Travel The World";
+    document.getElementById("title").textContent       = dest.title;
+    document.getElementById("image").src               = dest.image;
+    document.getElementById("image").alt               = dest.title;
+    document.getElementById("description").textContent = dest.description;
+    document.getElementById("cost").textContent        = dest.cost;
+    document.getElementById("tips").textContent        = dest.tips;
+    document.getElementById("bestTime").textContent    = dest.bestTime;
+
+    const list = document.getElementById("attractions");
+    dest.attractions.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      list.appendChild(li);
+    });
+  } else {
+    document.querySelector(".details-content").innerHTML = `
+      <h2>Destination not found</h2>
+      <p>Sorry, we couldn't find that destination.</p>
+      <a href="destinations.html" class="btn" style="margin-top:1rem;">Browse All Destinations</a>
+    `;
+  }
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

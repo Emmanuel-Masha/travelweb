@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Travel The World</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="booking.html" class="active">Booking</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="contact-hero">
+  <div class="container">
+    <h2>Plan and Book Your Dream Trip</h2>
+    <p>Select your destination and secure your spot now.</p>
+  </div>
+</section>
+
+<section class="booking-form">
+  <div class="container">
+    <h3>Booking Details</h3>
+
+    <form id="bookingForm">
+      <label>Full Name:</label>
+      <input type="text" id="name" placeholder="Enter your full name" required>
+
+      <label>Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label>Destination:</label>
+      <select id="destination" required>
+        <option value="">Select Destination</option>
+        <option value="Diani Beach">Diani Beach</option>
+        <option value="Maasai Mara">Maasai Mara</option>
+        <option value="Nairobi National Park">Nairobi National Park</option>
+      </select>
+
+      <p id="priceEstimate"></p>
+
+      <label>Travel Date:</label>
+      <input type="date" id="date" required>
+
+      <label>Number of People:</label>
+      <input type="number" id="people" min="1" max="10" placeholder="1-10" required>
+
+      <div class="extras">
+        <p>Instant confirmation</p>
+        <p>Secure booking</p>
+        <p>Free cancellation within 24 hours</p>
+      </div>
+
+      <button type="submit">Book Now</button>
+    </form>
+
+    <span id="bookingMsg"></span>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Emmanuel Masha BCS-05-0117/2024 &copy;</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

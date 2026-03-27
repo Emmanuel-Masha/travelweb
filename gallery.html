@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Travel The World</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="booking.html">Booking</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="contact-hero">
+  <div class="container">
+    <h2>Photo Gallery</h2>
+    <p>Browse stunning images from our favourite destinations around the world.</p>
+  </div>
+</section>
+
+<div class="search-container">
+  <input type="text" id="searchBar" placeholder="Search destinations…" onkeyup="searchPlaces()">
+</div>
+
+<div class="gallery" id="gallery">
+
+  <div class="card" data-name="paris">
+    <img src="images/PARIS.webp" alt="Paris">
+    <div class="overlay">Paris, France</div>
+  </div>
+
+  <div class="card" data-name="santorini">
+    <img src="images/SANTORINI.webp" alt="Santorini">
+    <div class="overlay">Santorini, Greece</div>
+  </div>
+
+  <div class="card" data-name="bali">
+    <img src="images/BALI.webp" alt="Bali">
+    <div class="overlay">Bali, Indonesia</div>
+  </div>
+
+  <div class="card" data-name="new york">
+    <img src="images/NEWYORK.webp" alt="New York">
+    <div class="overlay">New York, USA</div>
+  </div>
+
+  <div class="card" data-name="tokyo">
+    <img src="images/TOKYO.webp" alt="Tokyo">
+    <div class="overlay">Tokyo, Japan</div>
+  </div>
+
+  <div class="card" data-name="machu picchu">
+    <img src="images/MACCUPICHU.webp" alt="Machu Picchu">
+    <div class="overlay">Machu Picchu, Peru</div>
+  </div>
+
+  <div class="card" data-name="dubai">
+    <img src="images/DUBAI.webp" alt="Dubai">
+    <div class="overlay">Dubai, UAE</div>
+  </div>
+
+  <div class="card" data-name="cape town">
+    <img src="images/CAPETOWN.webp" alt="Cape Town">
+    <div class="overlay">Cape Town, South Africa</div>
+  </div>
+
+  <div class="card" data-name="rome">
+    <img src="images/ROME.webp" alt="Rome">
+    <div class="overlay">Rome, Italy</div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>Emmanuel Masha BCS-05-0117/2024 &copy;</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Travel The World</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="booking.html">Booking</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="contact-hero">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>We'd love to help you plan your next adventure. Reach out today!</p>
+  </div>
+</section>
+
+<section class="contact-info">
+  <div class="container">
+    <h3>Our Details</h3>
+    <p>Email: contact@travelkenya.example</p>
+    <p>Phone: +254 700 000 001</p>
+    <p>Location: Nairobi, Kenya</p>
+  </div>
+</section>
+
+<section class="contact-form">
+  <div class="container">
+    <h3>Send Us a Message</h3>
+    <form id="contactForm">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" rows="5" placeholder="Write your message here" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+    <span id="successMsg"></span>
+  </div>
+</section>
+
+<section class="reviews-section">
+  <div class="container">
+    <h3>Traveler Reviews</h3>
+    <form id="reviewForm">
+      <label for="reviewer">Your Name:</label>
+      <input type="text" id="reviewer" placeholder="Enter your name" required>
+
+      <label for="reviewText">Your Review:</label>
+      <textarea id="reviewText" rows="3" placeholder="Write your review here" required></textarea>
+
+      <button type="submit">Submit Review</button>
+    </form>
+    <div id="reviewsList"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Emmanuel Masha BCS-05-0117/2024 &copy;</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
